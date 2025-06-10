@@ -12,7 +12,7 @@
   Ces fichiers permettent de figer les schémas dans l'objectif de faciliter l'intégration des données dans BigQuery
 
 - ### helpers/
-  Fonctions utilitaires nécessaires au projet (formatage, validation, etc.).
+  Fonctions utilitaires nécessaires au projet
 
 - ### main.py
   Point d’entrée principal du script. C’est ici que les extractions sont orchestrées.
