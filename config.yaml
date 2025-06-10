@@ -1,0 +1,103 @@
+work_contracts:
+  api_version: 4
+  endpoint: /directory/api/4.0/work-contracts
+  file_name: 'work_contracts.json'
+  type: items
+  output_schema: work_contract_schema
+  params:
+    limit: 100
+    fields:
+      - id
+      - ownerId
+      - startsOn
+      - endsOn
+      - isApplicable
+      - establishmentId
+      - spc
+      - type
+      - hiringType
+      - terminationReason
+      - trialPeriodDays
+      - renewedTrialPeriodDays
+      - trialPeriodEndDate
+      - trialPeriodEndDate2
+      - authorId
+      - lastModifierId
+      - createdAt
+      - lastModifiedAt
+      - temporaryContractGroundId
+      - internshipSupervisorId
+
+departments:
+  api_version: 3
+  endpoint: /api/v3/departments
+  file_name: departments.json
+  type: items
+  output_schema: department_schema
+  params:
+    paging: 0,100
+    fields:
+      - id
+      - name
+      - code
+      - hierarchy
+      - parentId
+      - level
+      - isActive
+      - headID
+      - currentUsersCount
+      - users:
+        - id
+        - name
+      - currentUsers:
+        - id
+        - name
+
+
+users:
+  api_version: 3
+  endpoint: /api/v3/users
+  file_name: users.json
+  type: items
+  output_schema: user_schema
+  params:
+    formerEmployees: True
+    paging: 0,100
+    fields:
+      - id
+      - firstName
+      - lastName
+      - gender
+      - birthDate
+      - nationalityId
+      - address
+      - insuranceNumber
+      - culture:
+        - id
+        - name
+      - calendar:
+        - id
+        - name
+      - employeeNumber
+      - mail
+      - personalEmail
+      - jobTitle
+      - legalEntityID
+      - departmentID
+      - managerID
+      - rolePrincipal:
+        - id
+        - name
+      - habilitedRoles:
+        - id
+        - name
+      - bankName
+      - allowsElectronicPayslip
+      - frenchCarTaxHorsePower
+      - frenchMotocyclesTaxHorsePower
+      - userWorkCycles:
+        - id
+        - workCycleID
+        - startsOn
+        - endsOn
+      - applicationData
