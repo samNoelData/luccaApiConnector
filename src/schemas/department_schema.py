@@ -13,15 +13,15 @@ def department_schema(department: dict) -> dict:
         "headID": department.get("headID"),
         "users": [
             {
-                "id": department.get("id"),
-                "name": department.get("name")
-            } for department in department.get("users", [])
+                "id": user.get("id"),
+                "name": user.get("name")
+            } for user in department.get("users", [])
         ] or None,
         "currentUsers": [
             {
-                "id": department.get("id"),
-                "name": department.get("name")
-            } for department in department.get("currentUsers", [])
+                "id": currentUser.get("id"),
+                "name": currentUser.get("name")
+            } for currentUser in department.get("currentUsers", [])
         ] or None,
         "currentUsersCount": department.get("currentUsersCount")
     }
