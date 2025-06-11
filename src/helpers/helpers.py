@@ -40,11 +40,14 @@ def load_yaml_config(path):
     with open(path, 'r') as f:
         return yaml.safe_load(f)
 
-def apply_schema(schema_name: str, items: list) -> list:
+def apply_schema(schema_name: str, data):
     """
         Sélectionne et applique le schéma aux données
     """
     schema_func = SCHEMA_MAP.get(schema_name)
     if not schema_func:
         raise ValueError(f"function not found for '{schema_name}'")
-    return [schema_func(item) for item in items]
+    if isinstance(data, list):
+        return [schema_func(item) for item in data]
+    else:
+        return schema_func(data)
